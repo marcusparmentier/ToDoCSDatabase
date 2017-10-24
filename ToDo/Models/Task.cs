@@ -10,6 +10,8 @@ namespace ToDo.Models
     private int _id;
     private int _categoryId;
 
+    // private static List<Task> _instances = new List<Task> {};
+
     public Task(string description, int categoryId, int id = 0)
     {
       _description = description;
@@ -145,5 +147,18 @@ namespace ToDo.Models
         conn.Dispose();
       }
     }
+
+    // public static List<Task> GetAllInstancesT()
+    // {
+    //   return _instances;
+    // }
+    // public void SaveInstancesT()
+    // {
+    //   _instances.Add();
+    // }
+    // public static void ClearAllInstancesT()
+    // {
+    //   _instances.Clear();
+    // }
   }
 }

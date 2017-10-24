@@ -8,6 +8,10 @@ namespace ToDo.Models
   {
     private string _name;
     private int _id;
+
+    // private static List<Category> _instances = new List<Category> {};
+
+
     public Category(string name, int id = 0)
     {
       _name = name;
@@ -154,5 +158,18 @@ namespace ToDo.Models
             }
             return allCategoryTasks;
         }
+
+            // public static List<Category> GetAllInstancesC()
+            // {
+            //   return _instances;
+            // }
+            // public void SaveInstancesC()
+            // {
+            //   _instances.Add();
+            // }
+            // public static void ClearAllInstancesC()
+            // {
+            //   _instances.Clear();
+            // }
   }
 }
