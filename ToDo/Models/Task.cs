@@ -10,8 +10,6 @@ namespace ToDo.Models
     private int _id;
     private int _categoryId;
 
-    // private static List<Task> _instances = new List<Task> {};
-
     public Task(string description, int categoryId, int id = 0)
     {
       _description = description;
