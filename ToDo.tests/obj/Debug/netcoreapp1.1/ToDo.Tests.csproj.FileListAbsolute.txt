@@ -1,0 +1,13 @@
+/Users/Guest/Desktop/SQL-ToDo/ToDo.tests/bin/Debug/netcoreapp1.1/ToDo.Tests.deps.json
+/Users/Guest/Desktop/SQL-ToDo/ToDo.tests/bin/Debug/netcoreapp1.1/ToDo.Tests.runtimeconfig.json
+/Users/Guest/Desktop/SQL-ToDo/ToDo.tests/bin/Debug/netcoreapp1.1/ToDo.Tests.runtimeconfig.dev.json
+/Users/Guest/Desktop/SQL-ToDo/ToDo.tests/obj/Debug/netcoreapp1.1/ToDo.Tests.AssemblyInfo.cs
+/Users/Guest/Desktop/SQL-ToDo/ToDo.tests/bin/Debug/netcoreapp1.1/Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
+/Users/Guest/Desktop/SQL-ToDo/ToDo.tests/bin/Debug/netcoreapp1.1/Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
+/Users/Guest/Desktop/SQL-ToDo/ToDo.tests/bin/Debug/netcoreapp1.1/Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
+/Users/Guest/Desktop/SQL-ToDo/ToDo.tests/bin/Debug/netcoreapp1.1/ToDo.Tests.dll
+/Users/Guest/Desktop/SQL-ToDo/ToDo.tests/bin/Debug/netcoreapp1.1/ToDo.Tests.pdb
+/Users/Guest/Desktop/SQL-ToDo/ToDo.tests/bin/Debug/netcoreapp1.1/ToDo.dll
+/Users/Guest/Desktop/SQL-ToDo/ToDo.tests/bin/Debug/netcoreapp1.1/ToDo.pdb
+/Users/Guest/Desktop/SQL-ToDo/ToDo.tests/obj/Debug/netcoreapp1.1/ToDo.Tests.dll
+/Users/Guest/Desktop/SQL-ToDo/ToDo.tests/obj/Debug/netcoreapp1.1/ToDo.Tests.pdb
