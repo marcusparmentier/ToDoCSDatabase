@@ -34,29 +34,29 @@ namespace ToDo.Controllers
       List<Category> allCategories = Category.GetAll();
       return View("Categories", allCategories);
     }
-    //
-    // [HttpGet("/categories/{id}")]
-    // public ActionResult CategoryDetail(int id)
-    // {
-    //   Dictionary<string, object> model = new Dictionary<string, object>();
-    //   Category selectedCategory = Category.Find(id);
-    //   List<Task> categoryTasks = selectedCategory.GetTasks();
-    //   model.Add("category", selectedCategory);
-    //   model.Add("tasks", categoryTasks);
-    //   return View(model);
-    // }
-    //
-    // [HttpGet("/categories/{id}/tasks/new")]
-    // public ActionResult CategoryTaskForm(int id)
-    // {
-    //   Dictionary<string, object> model = new Dictionary<string, object>();
-    //   Category selectedCategory = Category.Find(id);
-    //   List<Task> allTasks = selectedCategory.GetTasks();
-    //   model.Add("category", selectedCategory);
-    //   model.Add("tasks", allTasks);
-    //   return View(model);
-    // }
-    //
+
+    [HttpGet("/categories/{id}")]
+    public ActionResult CategoryDetail(int id)
+    {
+      Dictionary<string, object> model = new Dictionary<string, object>();
+      Category selectedCategory = Category.Find(id);
+      List<Task> categoryTasks = selectedCategory.GetTasks();
+      model.Add("category", selectedCategory);
+      model.Add("tasks", categoryTasks);
+      return View(model);
+    }
+
+    [HttpGet("/categories/{id}/tasks/new")]
+    public ActionResult CategoryTaskForm(int id)
+    {
+      Dictionary<string, object> model = new Dictionary<string, object>();
+      Category selectedCategory = Category.Find(id);
+      List<Task> allTasks = selectedCategory.GetTasks();
+      model.Add("category", selectedCategory);
+      model.Add("tasks", allTasks);
+      return View(model);
+    }
+    // 
     // [HttpPost("/tasks")]
     // public ActionResult AddTask()
     // {
