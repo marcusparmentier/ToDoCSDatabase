@@ -1,5 +1,5 @@
 <h1>Add a new task to @Model["category"].GetName()</h1>
-<form action='/Categories/@Model["category"].GetId()' method='post'>
+<form action='/categories/task/@Model["category"].GetId()' method='post'>
   <input id='category-id' name='category-id' type='hidden' value='@Model["category"].GetId()'>
   <label for='inputTask'>Enter Task</label>
   <input id='inputTask' name='inputTask' type='text'>

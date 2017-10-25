@@ -57,28 +57,29 @@ namespace ToDo.Controllers
       return View(model);
     }
 
-    [HttpPost("/Categories/{id}")]
-      public ActionResult ResultTask2(int id)
-      {
-        string taskDescription = Request.Form["inputTask"];
-        Task newTask = new Task(taskDescription,id);
-        newTask.Save();
-
-        Dictionary<string, object> model = new Dictionary<string, object>();
-        Category selectedCategory = Category.Find(Int32.Parse(Request.Form["category-id"]));
-        List<Task> categoryTasks = selectedCategory.GetTasks();
-        model.Add("tasks", categoryTasks);
-        model.Add("category", selectedCategory);
-
-
-        return View("ResultTask", model);
-      }
-
-    [HttpGet("/tasks/{id}")]
-    public ActionResult TaskDetail(int id)
+    [HttpPost("/categories/task/{id}")]
+    public ActionResult AddTask(int id)
     {
-      Task task = Task.Find(id);
-      return View(task);
+      Console.WriteLine("work");
+      Task newTask = new Task(Request.Form["inputTask"], id);
+      newTask.Save();
+      Console.WriteLine(newTask.GetDescription());
+
+      Dictionary<string, object> model = new Dictionary<string, object>();
+      Category selectedCategory = Category.Find(Int32.Parse(Request.Form["category-id"]));
+      List<Task> categoryTasks = selectedCategory.GetTasks();
+      model.Add("tasks", categoryTasks);
+      model.Add("category", selectedCategory);
+
+
+      return View("CategoryDetail", model);
     }
-    }
+
+    // [HttpGet("/tasks/{id}")]
+    // public ActionResult TaskDetail(int id)
+    // {
+    //   Task task = Task.Find(id);
+    //   return View(task);
+    // }
+  }
 }

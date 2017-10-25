@@ -9,8 +9,6 @@ namespace ToDo.Models
     private string _name;
     private int _id;
 
-    // private static List<Category> _instances = new List<Category> {};
-
 
     public Category(string name, int id = 0)
     {
@@ -130,46 +128,34 @@ namespace ToDo.Models
 
     public List<Task> GetTasks()
     {
-            List<Task> allCategoryTasks = new List<Task> {};
-            MySqlConnection conn = DB.Connection();
-            conn.Open();
-            var cmd = conn.CreateCommand() as MySqlCommand;
-            cmd.CommandText = @"SELECT * FROM tasks WHERE category_id = @category_id;";
+      List<Task> allCategoryTasks = new List<Task> {};
+      MySqlConnection conn = DB.Connection();
+      conn.Open();
+      var cmd = conn.CreateCommand() as MySqlCommand;
+      cmd.CommandText = @"SELECT * FROM tasks WHERE category_id = @category_id;";
 
-            MySqlParameter categoryId = new MySqlParameter();
-            categoryId.ParameterName = "@category_id";
-            categoryId.Value = this._id;
-            cmd.Parameters.Add(categoryId);
+      MySqlParameter categoryId = new MySqlParameter();
+      categoryId.ParameterName = "@category_id";
+      categoryId.Value = this._id;
+      cmd.Parameters.Add(categoryId);
 
 
-            var rdr = cmd.ExecuteReader() as MySqlDataReader;
-            while(rdr.Read())
-            {
-              int taskId = rdr.GetInt32(0);
-              string taskDescription = rdr.GetString(1);
-              int taskCategoryId = rdr.GetInt32(2);
-              Task newTask = new Task(taskDescription, taskCategoryId, taskId);
-              allCategoryTasks.Add(newTask);
-            }
-            conn.Close();
-            if (conn != null)
-            {
-                conn.Dispose();
-            }
-            return allCategoryTasks;
-        }
+      var rdr = cmd.ExecuteReader() as MySqlDataReader;
+      while(rdr.Read())
+      {
+        int taskId = rdr.GetInt32(0);
+        string taskDescription = rdr.GetString(1);
+        int taskCategoryId = rdr.GetInt32(2);
+        Task newTask = new Task(taskDescription, taskCategoryId, taskId);
+        allCategoryTasks.Add(newTask);
+      }
+      conn.Close();
+      if (conn != null)
+      {
+          conn.Dispose();
+      }
+      return allCategoryTasks;
+    }
 
-            // public static List<Category> GetAllInstancesC()
-            // {
-            //   return _instances;
-            // }
-            // public void SaveInstancesC()
-            // {
-            //   _instances.Add();
-            // }
-            // public static void ClearAllInstancesC()
-            // {
-            //   _instances.Clear();
-            // }
   }
 }
